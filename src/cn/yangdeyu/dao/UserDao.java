@@ -1,12 +1,11 @@
 package cn.yangdeyu.dao;
 
-import java.sql.SQLException;
-
+import cn.itcast.jdbc.TxQueryRunner;
+import cn.yangdeyu.bean.User;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
-import cn.itcast.jdbc.TxQueryRunner;
-import cn.yangdeyu.bean.User;
+import java.sql.SQLException;
 
 public class UserDao {
 	private QueryRunner qr = new TxQueryRunner();
@@ -31,8 +30,14 @@ public class UserDao {
 		}
 	}
 	
-	public void updateUser() {
-		
+	public void updateUser(User user) {
+		try{
+			String sql="update users set nickname=?, gender=?, country=?, province=?, city=?, age=?, phonenumber=? where openid=?";
+			qr.update(sql,user.getNickname(),user.getGender(),user.getCountry(),user.getProvince(),user.getCity(),
+						user.getAge(),user.getPhonenumber(),user.getOpenid());
+		}catch(SQLException e){
+			throw  new RuntimeException(e);
+		}
 	}
 
 }
