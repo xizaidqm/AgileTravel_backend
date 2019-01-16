@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="First_AgileTravel">
+    <output-path>$PROJECT_DIR$/out/artifacts/First_AgileTravel</output-path>
+    <root id="archive" name="First_AgileTravel.war">
+      <element id="artifact" artifact-name="AgileTravel" />
+    </root>
+  </artifact>
+</component>

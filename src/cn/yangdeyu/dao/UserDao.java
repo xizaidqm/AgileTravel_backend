@@ -32,9 +32,8 @@ public class UserDao {
 	
 	public void updateUser(User user) {
 		try{
-			String sql="update users set nickname=?, gender=?, country=?, province=?, city=?, age=?, phonenumber=? where openid=?";
-			qr.update(sql,user.getNickname(),user.getGender(),user.getCountry(),user.getProvince(),user.getCity(),
-						user.getAge(),user.getPhonenumber(),user.getOpenid());
+			String sql="update users set nickname=?,  phonenumber=? where openid=?";
+			qr.update(sql,user.getNickname(),user.getPhonenumber(),user.getOpenid());
 		}catch(SQLException e){
 			throw  new RuntimeException(e);
 		}

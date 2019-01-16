@@ -8,6 +8,7 @@ public class UserService {
 	private UserDao userDao = new UserDao();
 	
 	public User findById(String openid) {
+
 		return userDao.findById(openid);
 	}
 	
@@ -18,6 +19,7 @@ public class UserService {
 	}
 	
 	public void updateUser(User user) {
+
 		userDao.updateUser(user);
 	}
 
